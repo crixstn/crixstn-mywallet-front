@@ -18,21 +18,20 @@ export default function SignUpPage(){
     function handleSubmit(e){
         e.preventDefault()
         setLoading(true)
-        if(confirmPassword === formData.password){
-           const promisse = api.SignUp({
-            ...formData
-           })
 
-           promisse.then(() => {
+        if(confirmPassword === formData.password){
+
+        api.SignUp({ ...formData})
+           .then(() => {
                 alert("Cadastro concluído :)!")
                 setLoading(false)
                 navigate("/")
            })
-
-           promisse.catch(err => {
+            .catch(err => {
                 alert(`Ocorreu um erro: ${err.response.data}`)
                 setLoading(false)
            })
+
         }else{
             alert("As senhas informadas não se coincidem")
         }
