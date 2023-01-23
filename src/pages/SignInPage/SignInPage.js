@@ -9,7 +9,7 @@ import { UserContext } from "../../contexts/UserContext";
 export default function SignInPage(){
     const[formData, setFormData] = useState({email: '', password:''});
     const[loading, setLoading] = useState(false)
-    const {user, setUser} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
 
     const navigate = useNavigate()
 
@@ -26,7 +26,8 @@ export default function SignInPage(){
                 setLoading(false)
                 const {name, token} = res.data
                 setUser({name, token})
-                //navigate("/home")
+                localStorage.setItem("user", JSON.stringify({name, token}))
+                navigate("/home")
             })
             .catch(err => {
                 alert(`Ocorreu um erro: ${err.response.data}`)

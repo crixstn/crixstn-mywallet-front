@@ -34,6 +34,7 @@ export default function SignUpPage(){
 
         }else{
             alert("As senhas informadas não se coincidem")
+            setLoading(false)
         }
     }
 

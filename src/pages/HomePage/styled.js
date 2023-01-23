@@ -26,11 +26,13 @@ export const Header = styled.header`
 `
 export const RegisterScreen = styled.div`
     display: flex;
+    flex-direction:column;
     width: 326px;
     height: 446px;
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 10px 15px;
+    gap:25px;
 
     h2{
         font-size: 20px;
@@ -39,7 +41,47 @@ export const RegisterScreen = styled.div`
         color: #868686;
         margin: auto;
     }
+
+    div{
+        display: flex;
+        width:100%;
+        justify-content: space-between;
+        font-size: 16px;
+
+        div{
+            display: flex;
+            justify-content: start;
+
+                p:nth-child(1){
+                color: #C6C6C6;
+                margin-right: 15px;
+                }
+            }
+
+    }
 `
+export const Value = styled.span`
+    display: flex;
+    
+    p{
+        color: ${props => props.color}
+    }
+
+`
+export const Total = styled.div`
+
+    h3{
+        font-weight: 700;
+        font-size: 17px;
+    }
+`
+export const TotalValue = styled.p`
+    font-weight: 400;
+    font-size: 17px;
+    color: #03AC00;
+    color: ${props => props.color}
+`
+
 export const Footer = styled.footer`
     display: flex;
     justify-content: space-between;
